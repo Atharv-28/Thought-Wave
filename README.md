@@ -10,3 +10,6 @@
 9. moment
 10. @mui/icons-material
 11. react-google-button
+
+# Theme (Color Pallete)
+1. Primary - 51c7c8
