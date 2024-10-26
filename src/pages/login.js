@@ -1,10 +1,34 @@
-import React from 'react';
-// import './login.css';f
+import { ImageOutlined } from '@mui/icons-material';
+import React, {useState} from 'react';
+import GoogleButton from 'react-google-button';
+import { useNavigate } from 'react-router-dom';
+import logo from "../Assets/fullLogo.png"
+// import './login.css';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            // Handle form submission logic here
+            console.log('Form submitted:', email, password);    
+            navigate('/home');
+        } catch (error) {
+            setError(error.message);
+            window.alert(error.message);
+        }
+    }
     return (
         <div className="login-container">
             <div className="login-box">
+                <div className='img-container'>
+                    <img src={logo} alt='logo' />    
+                </div>
                 <h1>ThoughtWave</h1>
                 <form>
                     <div className="input-group">
