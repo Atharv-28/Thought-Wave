@@ -16,7 +16,7 @@ const Login = () => {
     try {
       // Handle form submission logic here
       console.log("Form submitted:", email, password);
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       setError(error.message);
       window.alert(error.message);
@@ -36,6 +36,7 @@ const Login = () => {
               type="text"
               placeholder="Phone, email, or username"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="input-group">
@@ -44,9 +45,10 @@ const Login = () => {
               type="password"
               placeholder="Password"
               required
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className="login-button">
+          <button type="submit" className="login-button" onClick={handleSubmit}>
             Log In
           </button>
           <div className="login-footer">
