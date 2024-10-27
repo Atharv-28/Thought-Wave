@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
 import logo from "../Assets/fullLogo.png";
+import symbol from "../Assets/Symbol.png";
 import "../Styles/login.css";
 
 const Login = () => {
@@ -28,6 +29,9 @@ const Login = () => {
         <img src={logo} alt="logo" />
       </div>
       <div className="login-box">
+        <div className="symbol-container">
+          <img className="symbol-png" src={symbol} alt="Thought-Wave" />
+        </div>
         <h1 className="login-title">SIGN IN</h1>
         <form className="login-form">
           <div className="input-group">
@@ -52,18 +56,22 @@ const Login = () => {
             Log In
           </button>
           <div className="login-footer">
-            <a className="log-text" href="#">Forgot password?</a>
-            <a className="log-text" href="/signup">Sign up for ThoughtWave</a>
+            <a className="log-text" href="#">
+              Forgot password?
+            </a>
+            <a className="log-text" href="/signup">
+              Sign up for ThoughtWave
+            </a>
           </div>
         </form>
-        <hr 
-            style={{
-                marginTop: 20,
-                backgroundColor: "#51c7c8",
-                height: 0.1,
-                width: "90%",
-                border: "none",
-            }}
+        <hr
+          style={{
+            marginTop: 20,
+            backgroundColor: "#51c7c8",
+            height: 0.1,
+            width: "90%",
+            border: "none",
+          }}
         />
         <GoogleButton className="g-button" type="dark" />
       </div>

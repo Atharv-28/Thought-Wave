@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
 
 import logo from "../Assets/fullLogo.png";
+import symbol from "../Assets/Symbol.png";
 import "../Styles/login.css";
 
 const Signup = () => {
@@ -48,7 +49,10 @@ const Signup = () => {
         <img src={logo} alt="logo" />
       </div>
       <div className="login-box">
-        <h1 className="login-title">SIGN UP & Join Now</h1>
+      <div className="symbol-container">
+          <img className="symbol-png" src={symbol} alt="Thought-Wave" />
+        </div>
+        <h1 className="login-title">SIGN UP</h1>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="input-group">
             <input
