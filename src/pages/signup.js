@@ -1,67 +1,127 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import GoogleButton from "react-google-button";
+
+import logo from "../Assets/fullLogo.png";
+import "../Styles/login.css";
 
 const Signup = () => {
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: '',
-    });
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      //   navigate("/");
+      const user = {
+        username: username,
+        email: email,
+        name: name,
+        password: password,
+      };
+      console.log("Form submitted:", email, username, name, password);
+    } catch (error) {
+      setError(error.message);
+      window.alert(error.message);
+    }
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        console.log('Form submitted:', formData);
-    };
+  const handleGoogleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      // Handle Google login logic here
+      console.log("Google login");
+      navigate("/home");
+    } catch (error) {
+      setError(error.message);
+      window.alert(error.message);
+    }
+  };
 
-    return (
-        <div className="signup-container">
-            <h2>Sign Up for ThoughtWave</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
-    );
+  return (
+    <div className="login-container">
+      <div className="img-container">
+        <img src={logo} alt="logo" />
+      </div>
+      <div className="login-box">
+        <h1 className="login-title">SIGN UP & Join Now</h1>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              className="form-input"
+              type="text"
+              placeholder="Name"
+              required
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              className="form-input"
+              type="text"
+              placeholder="Username"
+              required
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              className="form-input"
+              type="email"
+              placeholder="Email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <input
+              className="form-input"
+              type="password"
+              placeholder="Set Password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          {error && <p className="error-message">{error}</p>}
+          <button type="submit" className="login-button">
+            Register
+          </button>
+        </form>
+        <hr
+          style={{
+            marginTop: 20,
+            backgroundColor: "#51c7c8",
+            height: 0.1,
+            width: "90%",
+            border: "none",
+          }}
+        />
+        <GoogleButton
+          onClick={handleGoogleLogin}
+          className="g-button"
+          type="dark"
+        />
+        <hr
+          style={{
+            marginTop: 20,
+            backgroundColor: "#51c7c8",
+            height: 0.1,
+            width: "90%",
+            border: "none",
+          }}
+        />
+        <div className="login-footer">
+          <Link className="log-text" to="/">
+            Already have an account? Sign in
+          </Link>
+          </div>
+      </div>
+    </div>
+  );
 };
 
 export default Signup;

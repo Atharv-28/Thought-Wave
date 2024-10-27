@@ -53,7 +53,7 @@ const Login = () => {
           </button>
           <div className="login-footer">
             <a className="log-text" href="#">Forgot password?</a>
-            <a className="log-text" href="#">Sign up for ThoughtWave</a>
+            <a className="log-text" href="/signup">Sign up for ThoughtWave</a>
           </div>
         </form>
         <hr 
