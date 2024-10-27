@@ -112,14 +112,15 @@
 
     .login-box{
         padding: 20px;
-        height: fit-content;
+        min-height: 100vh;
+        max-height: fit-content;
         flex-direction: column;
         justify-content: flex-start;
     }
 
     .symbol-container{
         display:block;
-        width: 60%;
+        width: 45%;
     }
 
     .img-container{
@@ -130,4 +131,29 @@
         width: 70%;
     }
     
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Your CSS rules for tablets */
+    .login-box{
+        padding: 20px;
+        min-height: 100vh;
+        max-height: fit-content;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .symbol-container{
+        display:block;
+        width: 45%;
+    }
+
+    .img-container{
+        display: none;
+    }
+
+    .input-group{
+        width: 70%;
+    }
 }
