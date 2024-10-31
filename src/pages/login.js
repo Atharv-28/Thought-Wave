@@ -17,7 +17,7 @@ const Login = () => {
     try {
       // Handle form submission logic here
       console.log("Form submitted:", email, password);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       setError(error.message);
       window.alert(error.message);

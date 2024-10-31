@@ -34,7 +34,7 @@ const Signup = () => {
   const handleGoogleLogin = async (e) => {
     e.preventDefault();
     try {
-      // Handle Google login logic here
+      // Handle Google login
       console.log("Google login");
       navigate("/home");
     } catch (error) {
