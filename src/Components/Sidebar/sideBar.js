@@ -66,7 +66,7 @@ const SideBar = (handlelogout, user) => {
         {" "}
         Tweet
       </Button>
-      <div className="profile-info">
+      <div className="profile__info">
         <Avatar
           src={
             loggedInUser[0]?.profileImage
@@ -75,7 +75,7 @@ const SideBar = (handlelogout, user) => {
           }
         />
       </div>
-      <div className="user-info">
+      <div className="user__info">
         <h4>
           {loggedInUser[0]?.name
             ? loggedInUser[0].name
@@ -110,7 +110,7 @@ const SideBar = (handlelogout, user) => {
                 : "https://cdn.pixabay.com/photo/2016/09/28/02/14/user-1699635_640.png"
             }
           />
-          <div className="user-info subUse-info">
+          <div className="user__info subUse__info">
             <div>
               <h4>
                 {loggedInUser[0]?.name
@@ -129,10 +129,6 @@ const SideBar = (handlelogout, user) => {
         <MenuItem onClick={handleClose}>Add an existing account</MenuItem>
         <MenuItem onClick={handlelogout}>Log out @{result}</MenuItem>
       </Menu>
-      <Button variant="contained" color="primary" onClick={handlelogout}>
-        {" "}
-        Logout
-      </Button>
     </div>
   );
 };
