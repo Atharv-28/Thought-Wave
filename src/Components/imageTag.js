@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/imageTag.css';
 
 const ImageTag = ({ src, title }) => {
   return (
@@ -8,4 +9,4 @@ const ImageTag = ({ src, title }) => {
   )
 }
 
-export default ImageTag
+export default ImageTag;
