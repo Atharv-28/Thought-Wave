@@ -73,6 +73,10 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    margin: 10px 0 0 20px; 
+    width:fit-content;
+    padding: 5px;
+    border: 2px solid black;
 }
 
 .hamburger div {
