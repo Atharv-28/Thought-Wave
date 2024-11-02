@@ -8,7 +8,7 @@ import Feed from './Components/Feed/feed';
 import Lists from './Components/Lists/lists'; 
 import Profile from './Components/Profile/profile'; 
 import Bookmark from './Components/Bookmark/bookmark';
-import Messages from './Components/Messages/messages';  
+import Message from './Components/Messages/message';  
 import Notification from './Components/Notification/notification';  
 import Explore from './Components/Explore/explore'; 
 import More from './Components/More/more';  
@@ -25,7 +25,7 @@ function App() {
         <Route path="lists" element={<Lists />} />  
         <Route path="profile" element={<Profile />} />  
         <Route path="bookmark" element={<Bookmark />} />  
-        <Route path="messages" element={<Messages />} />  
+        <Route path="messages" element={<Message />} />  
         <Route path="notification" element={<Notification />} />  
         <Route path="explore" element={<Explore />} />  
         <Route path="more" element={<More />} />  
