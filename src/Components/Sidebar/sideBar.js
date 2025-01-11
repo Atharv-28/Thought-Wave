@@ -65,24 +65,15 @@ const SideBar = (handlelogout, user) => {
             text="Notification"
           />
         </CustomLink>
-        <CustomLink to="/home/messages">
-          <SideBarOption active Icon={MailOutlineIcon} text="Messages" />
-        </CustomLink>
         <CustomLink to="/home/bookmark">
           <SideBarOption active Icon={BookmarkBorderIcon} text="Bookmark" />
-        </CustomLink>
-        <CustomLink to="/home/lists">
-          <SideBarOption active Icon={ListAltIcon} text="Lists" />
         </CustomLink>
         <CustomLink to="/home/profile">
           <SideBarOption active Icon={PermIdentityIcon} text="Profile" />
         </CustomLink>
-        <CustomLink to="/home/more">
-          <SideBarOption active Icon={MoreIcon} text="More" />
-        </CustomLink>
         <Button variant="outlined" className="sidebar__tweet" fullWidth>
           {" "}
-          Tweet
+          Share Thought
         </Button>
         <div className="profile__info">
           <Avatar
@@ -92,25 +83,26 @@ const SideBar = (handlelogout, user) => {
                 : "https://cdn.pixabay.com/photo/2016/09/28/02/14/user-1699635_640.png"
             }
           />
+          <div className="user__info">
+            <h4>
+              {loggedInUser[0]?.name
+                ? loggedInUser[0].name
+                : user && user.displayName}
+            </h4>
+            <h5>@{result}</h5>
+          </div>
+          <IconButton
+            size="small"
+            sx={{ ml: 2 }}
+            aria-controls={openMenu ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-valuetext={openMenu ? "true" : undefined}
+            onClick={handleClick}
+          />
+          <MoreHorizIcon />
+          <IconButton />
         </div>
-        <div className="user__info">
-          <h4>
-            {loggedInUser[0]?.name
-              ? loggedInUser[0].name
-              : user && user.displayName}
-          </h4>
-          <h5>@{result}</h5>
-        </div>
-        <IconButton
-          size="small"
-          sx={{ ml: 2 }}
-          aria-controls={openMenu ? "basic-menu" : undefined}
-          aria-haspopup="true"
-          aria-valuetext={openMenu ? "true" : undefined}
-          onClick={handleClick}
-        />
-        <MoreHorizIcon />
-        <IconButton />
+
         <Menu
           id="basic-menu"
           anchorEl={anchorEl}
