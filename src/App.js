@@ -1,9 +1,9 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './Pages/home';
-import Login from './Pages/login';
-import Signup from './Pages/signup';
+import Home from './pages/home';
+import Login from './pages/login';
+import Signup from './pages/signup';
 import Feed from './Components/Feed/feed';
 import Lists from './Components/Lists/lists'; 
 import Profile from './Components/Profile/profile'; 
