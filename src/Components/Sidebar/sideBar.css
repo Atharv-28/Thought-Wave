@@ -1,50 +1,40 @@
 .sidebar-container {
-    flex: 0.3;
     overflow-y: scroll;
     position: inherit;
     display: flex;
-    flex-direction: row;
-    padding-right: 20px;
-    min-width: 250px;
-    padding-top: 2vh;
+    flex-direction: column;
+    flex: 0.25;
+    /* min-width: 350px; */
   }
   
   .sidebar__hamburger {
     margin-right: 20px;
+    padding-top: 20px;
+    padding-left: 30px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     border-right: 1px solid #51c7c8;
-
   }
   
   .sidebar__hamburgerIcon {
     visibility: hidden;
+    position: absolute;
   }
   
-  .sidebar_Container::-webkit-scrollbar {
+  .sidebar-container::-webkit-scrollbar {
     display: none;
   }
   
   .nav-logo-container {
     width: 10vw;
     margin-left: 20px;
+    margin-bottom: 20px;
   }
 
   .nav-logo {
     width: 100%;
     height: auto;
-  }
-  
-  .sidebar__tweet {
-    width: 90%;
-    background-color: var(--twitter-color) !important;
-    border: none !important;
-    color: white !important;
-    font-weight: 900 !important;
-    text-transform: inherit !important;
-    border-radius: 30px !important;
-    height: 50px !important;
-    margin-top: 10px !important;
   }
   
   .Profile__info {
