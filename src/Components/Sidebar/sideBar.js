@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import ListAltIcon from "@mui/icons-material/ListAlt";
 import HomeIcon from "@mui/icons-material/Home";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import MoreIcon from "@mui/icons-material/More";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Divider from "@mui/material/Divider";
 import DoneIcon from "@mui/icons-material/Done";
 import Button from "@mui/material/Button";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import { Avatar, IconButton, List } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import "./sideBar.css";
@@ -21,6 +18,7 @@ import CustomLink from "./customLink";
 import { useNavigate } from "react-router-dom";
 import Symbol from "../../Assets/Symbol.png";
 import ImageTag from "../imageTag";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const SideBar = (handlelogout, user) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,13 +40,12 @@ const SideBar = (handlelogout, user) => {
   const result = user?.email?.split("@")[0];
 
   return (
-    <>
-      <div className="hamburger" onClick={toggleSidebar}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div className={`sidebar ${isSidebarOpen ? "active" : ""}`}>
+    <div className="sidebar-container">
+       <MenuIcon
+        className={`sidebar__hamburgerIcon ${isSidebarOpen ? "open" : ""}`}
+        onClick={toggleSidebar}
+      />
+      <div className={`sidebar__hamburger ${isSidebarOpen ? "open" : ""}`}>
         <div className="nav-logo-container">
           <ImageTag className="nav-logo" src={Symbol} title={"Thought-Wave"} />
         </div>
@@ -71,11 +68,7 @@ const SideBar = (handlelogout, user) => {
         <CustomLink to="/home/profile">
           <SideBarOption active Icon={PermIdentityIcon} text="Profile" />
         </CustomLink>
-        <Button variant="outlined" className="sidebar__tweet" fullWidth>
-          {" "}
-          Share Thought
-        </Button>
-        <div className="profile__info">
+        <div className="Profile__info">
           <Avatar
             src={
               loggedInUser[0]?.profileImage
@@ -142,7 +135,7 @@ const SideBar = (handlelogout, user) => {
           <MenuItem onClick={handlelogout}>Log out @{result}</MenuItem>
         </Menu>
       </div>
-    </>
+    </div>
   );
 };
 

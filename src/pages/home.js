@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import SideBar from "../Components/Sidebar/sideBar";
 import Widget from "../Components/Widgets/widget";
+import "../Styles/home.css";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -24,16 +25,9 @@ const Home = () => {
 
   return (
     <div className="homePage">
-      <div className="navContainer">
         <SideBar handlelogout={handlelogout} user={user} />
         <Outlet />
         <Widget />
-      </div>
-      <div>
-        <header>
-          <h1>Twitter</h1>
-        </header>
-      </div>
     </div>
   );
 };

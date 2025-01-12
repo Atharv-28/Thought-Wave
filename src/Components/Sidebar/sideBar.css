@@ -1,120 +1,125 @@
-/* sideBar.css */
-
-.sidebar {
-    border: 2px solid red;
-    width: 20vw;
-    height: 100vh;
-    background-color: #ffffff;
-    border-right: 1px solid #e6ecf0;
+.sidebar-container {
+    flex: 0.3;
+    overflow-y: scroll;
+    position: inherit;
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+    min-width: 250px;
+    padding-top: 2vh;
+  }
+  
+  .sidebar__hamburger {
+    margin-right: 20px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
-}
+    border-right: 1px solid #51c7c8;
 
-.nav-logo{
-    height: 100%;
+  }
+  
+  .sidebar__hamburgerIcon {
+    visibility: hidden;
+  }
+  
+  .sidebar_Container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nav-logo-container {
+    width: 10vw;
+    margin-left: 20px;
+  }
+
+  .nav-logo {
     width: 100%;
-}
-
-.nav-logo-container{
-    border: 2px solid yellow;
-    width: 15vh;
-}
-
-.sidebar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.sidebar .menu-item {
+    height: auto;
+  }
+  
+  .sidebar__tweet {
+    width: 90%;
+    background-color: var(--twitter-color) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    height: 50px !important;
+    margin-top: 10px !important;
+  }
+  
+  .Profile__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-radius: 9999px;
+    padding: 10px;
+  }
+  
+  .user__info {
+    margin-left: 10px;
+  }
+  
+  .subUser__info {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .user__info > h4 {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
     margin-bottom: 10px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.sidebar .menu-item:hover {
-    background-color: #e8f5fe;
-}
-
-.sidebar .menu-item .icon {
-    font-size: 20px;
-    margin-right: 15px;
-}
-
-.sidebar .menu-item .text {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.sidebar .tweet-button {
-    background-color: #1da1f2;
-    color: #ffffff;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: auto;
-    transition: background-color 0.2s ease;
-}
-
-.sidebar .tweet-button:hover {
-    background-color: #1a91da;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin: 10px 0 0 20px; 
-    width:fit-content;
-    padding: 5px;
-    border: 2px solid black;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px 0;
-    transition: 0.4s;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 10px;
-        display: none;
+  }
+  
+  .user__info > h5 {
+    margin: 0;
+    padding: 0;
+    opacity: 50%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-logo-container {
+        width: 15vh;
+        margin-left: 20px;
+        margin-bottom: 5vh;
+      }
+    .sidebar__hamburgerIcon {
+      visibility: visible;
     }
-    .nav-logo{
-        height: 15vw;
-        width: 15vw;
+    .sidebar__hamburger {
+      display: block;
+      position: fixed;
+      overflow-y: scroll;
+      top: 0;
+      left: 0;
+      background-color: white;
+      width: 200px;
+      height: 99%;
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
     }
-    .sidebar .menu-item {
-        padding: 8px 10px;
-        margin-bottom: 8px;
+  
+    .sidebar__hamburger.open {
+      transform: translateX(0);
     }
-
-    .sidebar .tweet-button {
-        width: 100%;
-        padding: 8px 0;
-        margin-top: 10px;
+  
+    .sidebar__hamburgerIcon {
+      display: block;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1100;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
     }
-
-    .hamburger {
-        display: flex;
+  
+    .sidebar__hamburgerIcon.open {
+      transform: translateX(250px);
     }
-
-    .sidebar.active {
-        display: flex;
-        flex-direction: column;
-    }
-}
+  }
+  
