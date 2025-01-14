@@ -96,12 +96,14 @@ const ThoughtBox = () => {
                 : user && user.photoURL
             }*/
           />
-          <input
+          <textarea
             type="text"
             placeholder="What's happening?"
             onChange={(e) => setpost(e.target.value)}
             value={post}
             required
+            rows="4"
+            cols="7"
           />
         </div>
         <div className="imageIcon_thoughtButton">

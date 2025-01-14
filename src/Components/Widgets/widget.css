@@ -1,55 +1,27 @@
-.widgets {
-    flex: 0.3;
-    min-width: fit-content;
-    overflow-y: scroll;
-  }
-  
-  .widgets::-webkit-scrollbar {
-    display: none;
-  }
   
   .widgets__hamburgerIcon{
     visibility: hidden;
   }
-  
-  .widgets__input {
+
+  .widget-container{
     display: flex;
-    align-items: center;
-    background-color: var(--twitter-background);
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin-top: 10px;
-    margin-left: 20px;
-  }
-  
-  .widgets__input>input {
-    border: none;
-    margin-top: 0px;
-    background-color: var(--twitter-background);
-  }
-  
-  .widgets__searchIcon {
-    color: gray;
-  }
-  
-  .widgets__widgetContainer {
-    margin-top: 15px;
-    margin-left: 20px;
+    flex-direction: column;
+    min-width: 20vw;
+    position: fixed;
+    right: 0;
+    height: 100vh;
     padding: 20px;
-    background-color: #f5f8fa;
-    border-radius: 20px;
-  }
-  
-  .widgets__widgetContainer>h2 {
-    font-size: 18px;
-    font-weight: 800;
+    border-left: 1px solid #51c7c8;
   }
   
   @media screen and (max-width: 768px) {
     .widgets {
       display: none;
     }
-  
+    
+    .widget-container{
+        border: none;
+    }
     .widgets__hamburgerIcon{
       visibility: visible;
     }
@@ -63,6 +35,7 @@
       width: 250px;
       height: 100%;
       z-index: 1000;
+      border-left: 1px solid #51c7c8;
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
     }

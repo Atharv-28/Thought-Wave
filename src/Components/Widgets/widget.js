@@ -11,7 +11,7 @@ const Widgets = () => {
   };
 
   return (
-    <>
+    <div className="widget-container">
       <DriveFileRenameOutlineIcon
         className={`widgets__hamburgerIcon ${isWidgetsOpen ? "open" : ""}`}
         onClick={toggleWidgets}
@@ -19,7 +19,7 @@ const Widgets = () => {
       <div className={`widgets__hamburger ${isWidgetsOpen ? "open" : ""}`}>
         <ThoughtBox />
       </div>
-    </>
+    </div>
   );
 };
 
