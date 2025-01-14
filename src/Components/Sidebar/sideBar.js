@@ -62,8 +62,8 @@ const SideBar = (handlelogout, user) => {
             text="Notification"
           />
         </CustomLink>
-        <CustomLink to="/home/bookmark">
-          <SideBarOption active Icon={BookmarkBorderIcon} text="Bookmark" />
+        <CustomLink to="/home/bookmarks">
+          <SideBarOption active Icon={BookmarkBorderIcon} text="Bookmarks" />
         </CustomLink>
         <CustomLink to="/home/profile">
           <SideBarOption active Icon={PermIdentityIcon} text="Profile" />

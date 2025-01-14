@@ -2,8 +2,10 @@ import React from 'react'
 
 const Bookmark = () => {
   return (
-    <div>bookmark</div>
+    <div>
+        <h1>Bookmarks</h1>
+    </div>
   )
 }
 
-export default Bookmark
+export default Bookmark;
