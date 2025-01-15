@@ -90,6 +90,7 @@ const ThoughtBox = () => {
       <form onSubmit={handletweet}>
         <div className="thoughtBox__input">
           <Avatar
+          className="thoughtBox__avatar"
             /*src={
               loggedinsuer[0]?.profileImage
                 ? loggedinsuer[0].profileImage
@@ -102,7 +103,7 @@ const ThoughtBox = () => {
             onChange={(e) => setpost(e.target.value)}
             value={post}
             required
-            rows="4"
+            rows="3"
             cols="7"
           />
         </div>
