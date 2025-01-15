@@ -43,13 +43,13 @@
   }
   
   .thoughtBox__thoughtButton {
-    background-color: var(--twitter-color) !important;
+    background-color: #51c7c8 !important;
     border: none !important;
     color: white !important;
     font-weight: 700 !important;
     text-transform: inherit !important;
     border-radius: 50px !important;
-    width: 100px;
+    width: max-content;
     height: 40px !important;
   }
   
