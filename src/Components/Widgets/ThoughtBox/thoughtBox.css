@@ -38,7 +38,8 @@
   
   .imageIcon_thoughtButton {
     display: flex;
-    justify-content: space-between;
+    width: 95%;
+    justify-content:space-around;
     align-items: center;
   }
   
