@@ -8,7 +8,7 @@
   .sidebarOptions:hover {
     background-color: #e8f5fe;
     border-radius: 30px;
-    color: var(--twitter-color);
+    color: #51c7c8;
     transition: color 100ms ease-out;
   }
   
@@ -23,7 +23,7 @@
   }
   
   .done__icon {
-    color: var(--twitter-color) !important;
+    color: #51c7c8 !important;
   }
   
   @media screen and (max-width:688px) {
