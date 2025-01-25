@@ -104,6 +104,7 @@ const SideBar = (handlelogout, user) => {
           MenuListProps={{
             "aria-labelledby": "basic-button",
           }}
+          className="profile__menu"
         >
           <MenuItem
             className="profile__info1"
@@ -113,7 +114,7 @@ const SideBar = (handlelogout, user) => {
               src={
                 loggedInUser[0]?.profileImage
                   ? loggedInUser[0].profileImage
-                  : "https://cdn.pixabay.com/photo/2016/09/28/02/14/user-1699635_640.png"
+                  : user && user.photoURL
               }
             />
             <div className="user__info subUser__info">
