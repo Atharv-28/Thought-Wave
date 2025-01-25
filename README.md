@@ -1,1 +1,2 @@
 This is a personal project
+I  created Thought-Wave as a platform for sharing thoughts and ideas. This social media app allows users to post, like, and comment on thoughts, fostering a community of like-minded individuals. It has features like forgot password with opt verification, fully functional tranding page and algorithm recommended feed according to user's preference. It was built using React for frontend, Express.Js for backend, MongoDB as database and Firebase for authentication, providing a seamless user experience.
