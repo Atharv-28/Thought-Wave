@@ -7,7 +7,6 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Divider from "@mui/material/Divider";
 import DoneIcon from "@mui/icons-material/Done";
-import Button from "@mui/material/Button";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { Avatar, IconButton } from "@mui/material";
 import Menu from "@mui/material/Menu";
@@ -20,15 +19,17 @@ import Symbol from "../../Assets/Symbol.png";
 import ImageTag from "../imageTag";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const SideBar = (handlelogout, user) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+const SideBar = ({ handlelogout, user }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const openMenu = Boolean(anchorEl);
   const loggedInUser = {};
   const navigate = useNavigate();
+
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -41,7 +42,7 @@ const SideBar = (handlelogout, user) => {
 
   return (
     <div className="sidebar-container">
-       <MenuIcon
+      <MenuIcon
         className={`sidebar__hamburgerIcon ${isSidebarOpen ? "open" : ""}`}
         onClick={toggleSidebar}
       />
@@ -73,7 +74,7 @@ const SideBar = (handlelogout, user) => {
             src={
               loggedInUser[0]?.profileImage
                 ? loggedInUser[0].profileImage
-                : "https://cdn.pixabay.com/photo/2016/09/28/02/14/user-1699635_640.png"
+                : user && user.photoURL
             }
           />
           <div className="user__info">
@@ -91,9 +92,9 @@ const SideBar = (handlelogout, user) => {
             aria-haspopup="true"
             aria-valuetext={openMenu ? "true" : undefined}
             onClick={handleClick}
-          />
-          <MoreHorizIcon />
-          <IconButton />
+          >
+            <MoreHorizIcon />
+          </IconButton>
         </div>
 
         <Menu
