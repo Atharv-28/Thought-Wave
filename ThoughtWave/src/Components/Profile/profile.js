@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Mainprofile from './MainProfile/Mainprofile';
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <div>Profile
+      <Mainprofile />
+    </div>
+    
   )
 }
 
